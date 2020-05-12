@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.succlz123.stardriver'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "org.succlz123.stardriver.app.transform"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':stardriver-annotation')
+    implementation project(path: ':stardriver-lib')
+}

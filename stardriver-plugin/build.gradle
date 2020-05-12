@@ -1,0 +1,30 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.6.3'
+    implementation 'com.android.tools.build:gradle-api:3.6.3'
+    implementation 'org.javassist:javassist:3.25.0-GA'
+}
+
+// classpath
+group = 'org.succlz123.stardriver'
+version = '0.0.1'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            // repository(url: "http://www.xxx.com/repos") {
+            //    authentication(userName: "", password: "")
+            // }
+            repository(url: uri('./repo'))
+        }
+    }
+}

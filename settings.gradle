@@ -1,0 +1,4 @@
+include ':app'
+include ':stardriver-annotation'
+include ':stardriver-lib'
+include ':stardriver-plugin'
